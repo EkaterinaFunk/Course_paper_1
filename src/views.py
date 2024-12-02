@@ -4,7 +4,7 @@ from typing import Any, Dict, List
 
 import pandas as pd
 
-from utils import get_currency_rates, get_greeting, get_stock_prices, load_operations, load_settings
+from src.utils import get_currency_rates, get_greeting, get_stock_prices, load_operations, load_settings
 
 
 def process_cards_info(df: pd.DataFrame) -> List[Dict]:
