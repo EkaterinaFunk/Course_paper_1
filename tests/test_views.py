@@ -2,6 +2,7 @@ from datetime import datetime
 
 import pandas as pd
 import pytest
+
 from src.views import process_cards_info, process_top_transactions
 
 
@@ -71,10 +72,7 @@ def test_process_top_transactions(sample_transactions_df):
     assert len(result) == 5
 
     for transaction in result:
-        assert all(
-            key in transaction for key in ["date", "amount", "category",
-                                           "description"]
-        )
+        assert all(key in transaction for key in ["date", "amount", "category", "description"])
         assert isinstance(transaction["date"], str)
         assert isinstance(transaction["amount"], float)
         assert isinstance(transaction["category"], str)
